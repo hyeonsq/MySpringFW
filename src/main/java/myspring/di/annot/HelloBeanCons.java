@@ -1,18 +1,29 @@
-package myspring.di.xml;
+package myspring.di.annot;
 
 import java.util.List;
 
-public class Hello {
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class HelloBeanCons {
 	String name;
-	Printer printer;
+	
+	IPrinter printer;
+	
 	List<String> names;
 
-	public Hello() {
+	public HelloBeanCons() {
 		System.out.println(this.getClass().getName() + " 기본생성자 호출됨!");
 	}
 	
-
-	public Hello(String name, Printer printer) {
+	@Autowired
+	public HelloBeanCons(@Value("${myNameC}") String name, 
+						 @Qualifier("consolePrinter") IPrinter printer) {
 		System.out.println(this.getClass().getName() + " 오버로딩 생성자 호출됨!");
 		this.name = name;
 		this.printer = printer;
@@ -24,16 +35,6 @@ public class Hello {
 
 	public void setNames(List<String> list) {
 		this.names = list;
-	}
-
-	public void setName(String name) {
-		System.out.println("setName() 메서드 호출됨 " + name);
-		this.name = name;
-	}
-
-	public void setPrinter(Printer printer) {
-		System.out.println("setPrinter() 메서드 호출됨 " + printer.getClass().getName());
-		this.printer = printer;
 	}
 
 	public String sayHello() {

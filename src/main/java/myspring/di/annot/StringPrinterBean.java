@@ -1,9 +1,12 @@
-package myspring.di.xml;
+package myspring.di.annot;
 
-public class StringPrinter implements Printer {
+import org.springframework.stereotype.Component;
+
+@Component("stringPrinter")
+public class StringPrinterBean implements IPrinter {
 	private StringBuffer buffer = new StringBuffer();
 	
-	public StringPrinter() {
+	public StringPrinterBean() {
 		System.out.println(this.getClass().getName() + " 기본생성자 호출됨!");
 	}
 
