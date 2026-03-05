@@ -32,8 +32,6 @@ public class OrderSpringTest {
 
         double total = service.calculateOrderTotal();
         
-        System.out.println("총 주문 금액 : " + total);
-        
         assertEquals(950000, total);
     }
 }
