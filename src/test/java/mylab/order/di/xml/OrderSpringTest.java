@@ -31,7 +31,7 @@ public class OrderSpringTest {
         assertNotNull(service);
 
         double total = service.calculateOrderTotal();
-
-        assertEquals(2300000, total);
+                
+        assertEquals(950000, total);
     }
 }
