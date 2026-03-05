@@ -9,7 +9,7 @@
     <bean id="product1" class="mylab.order.di.xml.Product">
         <constructor-arg value="P001"/>
         <constructor-arg value="노트북"/>
-        <constructor-arg value="1500000"/>
+        <constructor-arg value="150000"/>
     </bean>
 
     <bean id="product2" class="mylab.order.di.xml.Product">
